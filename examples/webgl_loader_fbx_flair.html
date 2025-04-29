@@ -45,11 +45,11 @@
 			const clock = new THREE.Clock();
 
 			const params = {
-				asset: 'Thriller Part 2'
+				asset: 'Thriller'
 			};
 
 			const assets = [
-				'Thriller part 2',
+				'Thriller',
 				'morph_test'
 			];
 
@@ -84,7 +84,8 @@
 				// scene.add( new THREE.CameraHelper( dirLight.shadow.camera ) );
 
 				// ground
-				const mesh = new THREE.Mesh( new THREE.PlaneGeometry( 800, 800 ), new THREE.MeshPhongMaterial( { color: 0xff00ff, depthWrite: false } ) );
+				const mesh = new THREE.Mesh( new THREE.PlaneGeometry( 0, 0 ), new THREE.MeshPhongMaterial( { color: 0xff00ff, depthWrite: false } ) );
+				
 				mesh.rotation.x = - Math.PI / 2;
 				mesh.receiveShadow = true;
 				scene.add( mesh );
@@ -201,14 +202,7 @@
 
 							// -----------------------------------------------------------
 							// Aplicar un material de agua o translúcido al modelo
-							child.material = new THREE.MeshStandardMaterial({
-								color: 0x000000,  // Color negro
-								transparent: false,
-								opacity: 0.9,
-								roughness: 0.1,
-								metalness: 1.5,//Efecto metalico
-								
-							});
+
 							// -----------------------------------------------------------
 
 							child.castShadow = true;
